@@ -37,8 +37,11 @@ print("-------------------------------------------\n"
 # 4. Print the final 'total_cost' using an f-string, formatted to two decimal places.
 
 # Write your code below:
-
-
+price = 70.00
+VAT_RATE = 0.20
+# VAT = price * VAT_RATE
+total_cost = (price * VAT_RATE) + price
+print(f"Total cost including VAT £{total_cost:.2f}")
 # -------------------------------------------
 # CHECKPOINT
 # -------------------------------------------
@@ -70,8 +73,13 @@ print("\n-------------------------------------------\n"
 # 5. Otherwise (if total_cost is 60 or more), print "Purchase denied: Budget severely exceeded."
 
 # Write your code below:
-
-
+budget = 50.00
+if total_cost <= budget:
+    print("Purchased approved: Within budget.")
+elif total_cost <= 59:
+    print("Warning: Purchase exceeds budget but is manageable.")
+else:
+    print("Purchased denied: Budget severely exceeded")
 # -------------------------------------------
 # CHECKPOINT
 # -------------------------------------------
@@ -107,11 +115,15 @@ print("\n-------------------------------------------\n"
 
 def calculate_area():
     # Insert try/except block here
+    while True:
+        try:            
     # Remember to handle the input() and int() conversions inside the try block
-    length = int(input("Enter rectangle length: "))
-    width = int(input("Enter rectangle width: "))
-    area = length * width
-    return area
+            length = int(input("Enter rectangle length: "))
+            width = int(input("Enter rectangle width: "))
+            area = length * width
+            return area
+        except ValueError:
+            print("Enter a whole number")
     # Insert except block here
 
 # Call the function:
