@@ -37,8 +37,11 @@ print("-------------------------------------------\n"
 # 4. Print the final 'total_cost' using an f-string, formatted to two decimal places.
 
 # Write your code below:
-
-
+price = 45.00
+VAT_RATE = 0.20
+# VAT = price * VAT_RATE
+total_cost = (price * VAT_RATE) + price
+print(f"Total cost including VAT £{total_cost:.2f}")
 # -------------------------------------------
 # CHECKPOINT
 # -------------------------------------------
