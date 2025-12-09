@@ -115,11 +115,15 @@ print("\n-------------------------------------------\n"
 
 def calculate_area():
     # Insert try/except block here
+    while True:
+        try:            
     # Remember to handle the input() and int() conversions inside the try block
-    length = int(input("Enter rectangle length: "))
-    width = int(input("Enter rectangle width: "))
-    area = length * width
-    return area
+            length = int(input("Enter rectangle length: "))
+            width = int(input("Enter rectangle width: "))
+            area = length * width
+            return area
+        except ValueError:
+            print("Enter a whole number")
     # Insert except block here
 
 # Call the function:
